@@ -1,0 +1,7 @@
+fr:
+  activerecord:
+    attributes:
+      food/recipe/category:
+        starter: "Entrée"
+        main_dish: "Plat"
+        dessert: "Dessert"

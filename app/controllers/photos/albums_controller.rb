@@ -11,7 +11,7 @@ module Photos
           album.serializable_hash(
             include: [
               photos: {only: ['id', 'title'], methods: ['file_url']},
-              sub_albums: {only: ['title']},
+              sub_albums: {only: ['title', 'id']},
             ]
           )
         end
@@ -25,7 +25,7 @@ module Photos
         result: album.serializable_hash(
           include: [
             photos: {only: ['id', 'title'], methods: ['file_url']},
-            sub_albums: {only: ['title']},
+            sub_albums: {only: ['title', 'id']},
           ]
         )
       }
@@ -38,7 +38,7 @@ module Photos
         result: album.serializable_hash(
           include: [
             photos: {only: ['title', 'file_url']},
-            sub_albums: {only: ['title']},
+            sub_albums: {only: ['title', 'id']},
           ]
         )
       }

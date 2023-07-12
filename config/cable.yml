@@ -7,5 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= "redis://#{Rails.application.credentials.dig(:redis, :host)}:6379/1" { "redis://localhost:6379/1" } %>
+  url: <%= "redis://#{Rails.application.credentials.dig(:redis, :host)}:6379/1" %>
   channel_prefix: lair_api_production

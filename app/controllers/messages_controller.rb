@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   
   # /api/messages
   def index
-    render json: {results: Message.all.order(created_at: :desc)}
+    render json: {results: Message.all.order(created_at: :asc)}
   end
 
   # /api/messages

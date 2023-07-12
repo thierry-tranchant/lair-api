@@ -5,6 +5,6 @@ class ContextsController < ApplicationController
 
   # /api/contexts
   def index
-    render json: {result: {current_user: request.origin}}
+    render json: {result: {current_user: current_user}}
   end
 end

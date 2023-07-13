@@ -14,9 +14,9 @@ class OneSignalClient
 
     request.body = {
       app_id: Rails.application.credentials.dig(:one_signal, :app_id),
-      include_player_ids: [user.one_signal_player_id]
+      include_player_ids: [user.one_signal_player_id],
       contents: {fr: content, en: "You have received a message"}
-    }
+    }.to_json
 
     http.request(request)
   end

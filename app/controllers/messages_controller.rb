@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
       MessagesChannel.broadcast_to(user, message)
     end
 
-    recipient = User.all.select { |user| user.id != author_id }.first
+    recipient = User.all.select { |user| user.id != messages_params[:author_id] }.first
 
     OneSignalClient.call(recipient, "#{current_user.username} vous a envoyé un message")
 

@@ -12,6 +12,7 @@ module RoundTable
       Rails.application.routes.url_helpers.rails_blob_url(
         csv,
         host: Rails.application.credentials.dig(:host, Rails.env.to_sym),
+        protocol: Rails.env.production? ? 'https' : 'http',
       )
     end
   end

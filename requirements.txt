@@ -1,0 +1,4 @@
+numpy>=1.26.1,<1.27
+numpyencoder>=0.3.0,<0.4
+dj-database-url>=2.0,<3.0
+whitenoise[brotli]>=6.0,<7.0

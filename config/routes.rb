@@ -23,4 +23,8 @@ Rails.application.routes.draw do
                 sessions: "sessions",
                }
   end
+
+  scope path: 'round_table', module: 'round_table' do
+    resources :events, only: [:create, :index]
+  end
 end

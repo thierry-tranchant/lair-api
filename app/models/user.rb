@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :messages
+  has_many :episod_bookings, class_name: "Sports::Episod::Booking"
 end

@@ -3,21 +3,25 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 document.addEventListener("turbo:load", () => {
+  var lastFocus = null
+
   document.querySelector(".modal-opener").addEventListener("click", () => {
+    const nonModal = document.querySelector(".non-modal")
     const modal = document.querySelector(".modal-container")
-    const isHidden = modal.classList.contains('not-displayed')
     
-    if (isHidden) {
-      return modal.classList.remove('not-displayed')
-    }
-  
-    return modal.classList.add('not-displayed')
+    modal.classList.remove('not-displayed')
+    lastFocus = document.activeElement
+    const firstButton = modal.querySelector("button")
+    if (firstButton) firstButton.focus()
+    return nonModal.setAttribute('aria-hidden', true)
   })
   
   document.querySelector(".modal-closer").addEventListener("click", () => {
     const modal = document.querySelector(".modal-container")
-  
-    return modal.classList.add('not-displayed')
+    
+    modal.classList.add('not-displayed')
+    if (lastFocus) lastFocus.focus()
+    return nonModal.setAttribute('aria-hidden', false)
   })
   
   document.querySelector("#teams_number").addEventListener("change", () => {

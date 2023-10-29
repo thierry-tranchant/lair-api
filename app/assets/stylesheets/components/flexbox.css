@@ -1,0 +1,47 @@
+.flex {
+  display: flex;
+ }
+
+ .flex-even {
+  flex: 1;
+ }
+
+ .flex-column {
+  flex-direction: column;
+ }
+
+ .flex-gap-xxs {
+  gap: 8px;
+ }
+
+ .flex-gap-s {
+  gap: 16px;
+ }
+
+ .flex-gap-l {
+  gap: 24px;
+ }
+
+ .flex-gap-xxxl {
+  gap: 48px;
+ }
+
+ .justify-center {
+  justify-content: center;
+ }
+
+ .justify-end {
+  justify-content: flex-end;
+ }
+
+ .justify-between {
+  justify-content: space-between;
+ }
+
+ .align-center {
+  align-items: center;
+ }
+ 
+ .justify-around {
+  justify-content: space-around;
+ }

@@ -1,0 +1,19 @@
+.modal-container {
+  position: absolute;
+  z-index: 1000;
+  height: 100%;
+  width: 110%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+ }
+
+ .modal-content {
+  background-color: white;
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+ }

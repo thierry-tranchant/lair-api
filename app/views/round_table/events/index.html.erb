@@ -1,33 +1,16 @@
 <div style='min-width: 40%'>
   <h1 class='text-center margin-top-xxl margin-bottom-xxl'>Événements</h1>
   <div class='flex justify-end margin-bottom-l'>
-    <button
-      class='
-        modal-opener
-        card
-        text-not-underlined
-        color-black
-        filled-turquoise
-        padding-left-xxs
-        padding-right-xxs
-        padding-top-xxs
-        padding-bottom-xxs
-        font-size-m
-      '
-    >
-      Ajouter un événement
-    </button>
+    <%= 
+      render(
+        "shared/components/button",
+        text: "Ajouter un événement",
+        klasses: "modal-opener",
+      )
+    %>
   </div>
 
-  <div
-    class='
-      card
-      padding-top-s
-      padding-bottom-s
-      padding-left-s
-      padding-right-s
-    '
-  >
+  <div class='card padding-top-s padding-bottom-s padding-left-s padding-right-s'>
     <% if @events.present? %>
       <% @events.each do |event| %>
         <div class='flex justify-between align-center flex-gap-xxxl'>
@@ -35,22 +18,13 @@
             <%= event.name %> / <%= event.rounds_count %> rotations / <%= event.teams.length %> équipes
           </p>
           <% if event.csv.attached? %>
-            <a
-              class='
-                card
-                text-not-underlined
-                color-black
-                filled-turquoise
-                padding-left-xxs
-                padding-right-xxs
-                padding-top-xxs
-                padding-bottom-xxs
-                margin-right-s
-              '
-              href=<%= event.csv_url  %>
-            >
-              Télécharger le CSV
-            </a>
+            <%= 
+              render(
+                "shared/components/button",
+                text: "Télécharger le CSV",
+                link: event.csv_url,
+              )
+            %>
           <% end %>
         </div>
         <% if event != @events.last %>
@@ -67,20 +41,13 @@
   <div class="card modal-content padding-xl">
     <div class="flex justify-between align-center flex-gap-s margin-bottom-s">
       <h2 class="margin-none">Ajouter un événement</h2>
-      <button class="
-        modal-closer
-        card
-        text-not-underlined
-        color-black
-        filled-turquoise
-        padding-left-xxs
-        padding-right-xxs
-        padding-top-xxs
-        padding-bottom-xxs
-        font-size-m"
-      >
-        x
-      </button>
+      <%= 
+        render(
+          "shared/components/button",
+          text: "x",
+          klasses: "modal-closer",
+        )
+      %>
     </div>
     <%= form_with url: "/round_table/events", method: :post do |form| %>
       <div class="flex justify-between flex-gap-s align-center margin-bottom-s">
@@ -96,20 +63,13 @@
         <div id='workshops' class='flex flex-even flex-column flex-gap-xxs margin-top-s margin-bottom-s'></div>
       </div>
       <div class="flex justify-around">
-        <button class="
-          modal-closer
-          card
-          text-not-underlined
-          color-black
-          filled-turquoise
-          padding-left-xxs
-          padding-right-xxs
-          padding-top-xxs
-          padding-bottom-xxs
-          font-size-m"
-        >
-          Valider
-        </button>
+        <%= 
+          render(
+            "shared/components/button",
+            text: "Valider",
+            klasses: "modal-closer",
+          )
+        %>
       </div>
     <% end %>
   </div>

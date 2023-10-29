@@ -12,7 +12,6 @@ class AddEpisodTables < ActiveRecord::Migration[7.0]
       t.datetime :starts_at
       t.bigint :episod_id
       t.references :coach
-      t.integer
       t.jsonb :available_spots
       t.integer :spots_number
 
